@@ -19,10 +19,7 @@ function Game() {
   const [gameState, setGameState] = React.useState('running');
   const [guesses, setGuesses] = React.useState([])
 
-  if(guesses.length >= NUM_OF_GUESSES_ALLOWED && gameState !== 'won'){
-    setGameState('lost');
-    console.log('lost');
-  }
+
 
   const addGuess = (guessInput) => {
     let nextGuesses = [...guesses];
@@ -31,6 +28,8 @@ function Game() {
 
     if(guessInput === answer) {
       setGameState('won');
+    } else if(nextGuesses.length >= NUM_OF_GUESSES_ALLOWED){
+      setGameState('lost');
     }
   }
 

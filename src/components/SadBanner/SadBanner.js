@@ -1,10 +1,11 @@
 import React from "react";
+import Banner from "../Banner";
 
-function SadBanner({correctAnswer}) {
+function SadBanner({ correctAnswer }) {
   return (
-    <div className="sad banner">
+    <Banner status={"sad"}>
       <p>Sorry, the correct answer is <strong>{correctAnswer}</strong>.</p>
-    </div>
+    </Banner>
   );
 }
 
